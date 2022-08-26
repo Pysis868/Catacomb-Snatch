@@ -1,13 +1,8 @@
 plugins {
     id 'java'
-    id 'maven'
+    id 'maven-publish'
     id 'idea'
-    id 'edu.sc.seis.macAppBundle' version '2.1.5'
-    id 'com.github.johnrengelman.shadow' version '1.2.3'
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.11'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 archivesBaseName = "Catacomb-Snatch"
@@ -34,20 +29,20 @@ repositories {
 }
 
 dependencies {
-    compile fileTree( dir: 'lib', include: '*.jar')
-    compile 'org.lwjgl.lwjgl:lwjgl:2.9.3'
-    compile 'com.esotericsoftware:kryonet:2.22.0-RC1'
-    compile 'org.jruby:jruby:1.7.21'
-    compile 'org.python:jython:2.5.3'
+    implementation  fileTree( dir: 'lib', include: '*.jar')
+    implementation  'org.lwjgl:lwjgl:3.3.1'
+    implementation  'com.esotericsoftware:kryonet:2.22.0-RC1'
+    implementation  'org.jruby:jruby:9.3.7.0'
+    implementation  'org.python:jython:2.7.2'
 }
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 
 jar {
     from {
-        configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeOnly.collect { it.isDirectory() ? it : zipTree(it) }
     }
     manifest {
         attributes "Main-Class" : "com.mojang.mojam.MojamStartup"
@@ -73,7 +68,4 @@ task run() {
     }
 }
 
-macAppBundle {
-    mainClassName = "com.mojang.mojam.MojamStartup"
-    icon = "res/art/icon/cs_icons.icns"
-}
+tasks.withType(Copy).all { duplicatesStrategy 'exclude' }
