@@ -1,3 +1,15 @@
+buildscript {
+    repositories {
+        ivy {
+            artifactPattern 'http://gradle-macappbundle.googlecode.com/files/[module]-[revision].[ext]'
+        }
+    }
+
+    dependencies {
+//        classpath 'edu.sc.seis:gradle-macappbundle:1.0.3'
+    }
+}
+
 plugins {
     id 'java'
     id 'maven-publish'
@@ -73,15 +85,4 @@ task run() {
 //    icon = "res/art/icon/cs_icons.icns"
 //}
 
-buildscript {
-    repositories {
-        ivy {
-            artifactPattern 'http://gradle-macappbundle.googlecode.com/files/[module]-[revision].[ext]'
-        }
-    }
-
-    dependencies {
-//        classpath 'edu.sc.seis:gradle-macappbundle:1.0.3'
-    }
-}
 tasks.withType(Copy).all { duplicatesStrategy 'exclude' }
