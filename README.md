@@ -1,9 +1,5 @@
 [![Catacomb Snatch](http://i.imgur.com/uSFJF.png)](https://catacombsnatch.net)
 
-Travis: [![Build Status](https://travis-ci.org/Maescool/Catacomb-Snatch.svg?branch=develop)](https://travis-ci.org/Maescool/Catacomb-Snatch)
-
-Jenkins: [![Build Status](https://ci.catacombsnatch.net/job/Catacomb-Snatch-Dev/badge/icon)](https://ci.catacombsnatch.net/job/Catacomb-Snatch-Dev)
-
 ### Links
 
 * [Original source from Mojang](http://assets.mojang.com/mojam/CatacombSnatch_src.zip)

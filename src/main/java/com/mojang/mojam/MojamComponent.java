@@ -3,7 +3,6 @@ package com.mojang.mojam;
 import com.mojang.mojam.console.Console;
 import com.mojang.mojam.entity.Player;
 import com.mojang.mojam.entity.mob.Team;
-import com.mojang.mojam.gui.AJoyBindingsMenu;
 import com.mojang.mojam.gui.AudioVideoMenu;
 import com.mojang.mojam.gui.CharacterSelectionMenu;
 import com.mojang.mojam.gui.CreditsScreen;
@@ -13,7 +12,6 @@ import com.mojang.mojam.gui.GuiError;
 import com.mojang.mojam.gui.HostingWaitMenu;
 import com.mojang.mojam.gui.HowToPlayMenu;
 import com.mojang.mojam.gui.JoinGameMenu;
-import com.mojang.mojam.gui.JoyBindingsMenu;
 import com.mojang.mojam.gui.KeyBindingsMenu;
 import com.mojang.mojam.gui.LevelEditorMenu;
 import com.mojang.mojam.gui.LevelSelect;
@@ -201,7 +199,6 @@ public class MojamComponent extends Canvas implements Runnable, MouseMotionListe
 		snatchClient = new SnatchClient();
 		snatchClient.setComponent(this);
 		instance = this;
-		JoypadHandler.init();
 	}
 
 	public void setScale(int i) {
@@ -439,7 +436,6 @@ public class MojamComponent extends Canvas implements Runnable, MouseMotionListe
 		
 
 		while (running) {
-			JoypadHandler.tick();
 			ModSystem.updateTick();
 			if (!this.hasFocus()) {
 				keys.release();
@@ -1175,6 +1171,9 @@ public class MojamComponent extends Canvas implements Runnable, MouseMotionListe
 			case TitleMenu.AXES_MENU:
 				menuStack.add(new AJoyBindingsMenu());
 				break;
+		case TitleMenu.LEVEL_EDITOR_ID:
+			menuStack.add(new LevelEditorMenu());
+			break;
 
 			case TitleMenu.LEVEL_EDITOR_ID:
 				menuStack.add(new LevelEditorMenu());
