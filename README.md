@@ -13,3 +13,21 @@
 * Chat with the developers on the [Webchat](http://webchat.freenode.net/?channels=catacomb-snatch) or irc.freenode.net #catacomb-snatch
 * [libGDX rewrite](https://github.com/Catacomb-Snatch/Catacomb-Snatch)
 
+### How to build project
+
+1. sudo apt-get install openjdk-8-jdk
+2. export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+3. echo $JAVA_HOME
+4. sudo update-alternatives --config java
+5. java -version
+	- **should be set to 1.8 version**, output shall be:
+	- openjdk version "1.8.0_292"
+	- OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10)
+	- OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
+6. in **build.gradle** update id 'maven' to id 'maven-publish'
+7. ./gradlew
+8. ./gradlew tasks
+9. ./gradlew build
+10. ./gradlew run
+
+> When there's a build error, delete .gradle folder in project folder and delete ~/.gradle folder as well and then run ./gradlew again
