@@ -1171,9 +1171,6 @@ public class MojamComponent extends Canvas implements Runnable, MouseMotionListe
 			case TitleMenu.AXES_MENU:
 				menuStack.add(new AJoyBindingsMenu());
 				break;
-		case TitleMenu.LEVEL_EDITOR_ID:
-			menuStack.add(new LevelEditorMenu());
-			break;
 
 			case TitleMenu.LEVEL_EDITOR_ID:
 				menuStack.add(new LevelEditorMenu());

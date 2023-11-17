@@ -21,6 +21,8 @@ archivesBaseName = "Catacomb-Snatch"
 project.group = "com.mojang.mojam"
 project.version = "1.1.1-SNAPSHOT"
 
+apply plugin: 'eclipse'
+
 sourceSets {
     main {
         java {
@@ -37,7 +39,7 @@ sourceSets {
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
+    //jcenter() //deprecated
 }
 
 dependencies {

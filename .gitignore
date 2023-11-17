@@ -33,6 +33,7 @@ build
 bin
 out
 dist
+target
 manifest.mf
 
 # OS generated files

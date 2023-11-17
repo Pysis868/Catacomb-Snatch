@@ -10,7 +10,7 @@ import com.esotericsoftware.kryonet.FrameworkMessage.Ping;
 import com.esotericsoftware.kryonet.Listener;
 import com.mojang.mojam.GameCharacter;
 import com.mojang.mojam.MojamComponent;
-import com.mojang.mojam.gui.PauseMenu;
+//import com.mojang.mojam.gui.PauseMenu;
 import com.mojang.mojam.gui.TitleMenu;
 import com.mojang.mojam.level.DifficultyInformation;
 import com.mojang.mojam.network.kryo.Network.ChangeKeyMessage;
