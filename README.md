@@ -15,6 +15,12 @@
 
 ### How to build project
 
+From Pysis, 2023-11-17 (incomplete):
+1. `mvn dependency:copy-dependencies`?
+2. `./gradlew eclipse`
+3. Add existing project to Eclipse.
+
+From pr033r, 2021-08-18:
 1. sudo apt-get install openjdk-8-jdk
 2. export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 3. echo $JAVA_HOME
